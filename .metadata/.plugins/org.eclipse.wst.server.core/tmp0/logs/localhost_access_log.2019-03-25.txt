@@ -1,0 +1,8 @@
+127.0.0.1 - - [25/Mar/2019:19:10:04 +0530] "GET / HTTP/1.1" 404 955
+0:0:0:0:0:0:0:1 - - [25/Mar/2019:19:10:07 +0530] "GET /Hospital_Management/index.jsp HTTP/1.1" 200 2334
+0:0:0:0:0:0:0:1 - - [25/Mar/2019:19:10:07 +0530] "GET /Hospital_Management/css/style.css HTTP/1.1" 200 10730
+0:0:0:0:0:0:0:1 - - [25/Mar/2019:19:10:21 +0530] "GET /Hospital_Management/index.jsp HTTP/1.1" 200 2334
+0:0:0:0:0:0:0:1 - - [25/Mar/2019:19:10:21 +0530] "GET /Hospital_Management/css/style.css HTTP/1.1" 200 10730
+0:0:0:0:0:0:0:1 - - [25/Mar/2019:19:10:22 +0530] "GET /Hospital_Management/images/bg.jpg HTTP/1.1" 200 439192
+0:0:0:0:0:0:0:1 - - [25/Mar/2019:19:10:29 +0530] "POST /Hospital_Management/Log_servlet HTTP/1.1" 302 190
+0:0:0:0:0:0:0:1 - - [25/Mar/2019:19:10:29 +0530] "GET /Hospital_Management/hospital_reg.jsp HTTP/1.1" 200 2260
