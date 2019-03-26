@@ -59,7 +59,7 @@ public class Log_servlet extends HttpServlet {
 				
 				
 					
-					response.sendRedirect("hospital_reg.jsp");
+					response.sendRedirect("Add_pat.jsp");
 				
 			}
 		
