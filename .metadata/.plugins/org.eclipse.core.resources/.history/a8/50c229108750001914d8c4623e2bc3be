@@ -1,0 +1,93 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<%@page import="Model.add_patModel"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="services.Add_patservice"%>
+<html>
+<head>
+<title>Emergency Accident portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Shadow Login Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files --> 
+<!-- web font --> 
+<link href="//fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+<%Add_patservice ar=new Add_patservice();
+	   ArrayList<add_patModel>arr2=ar.selectAllRegistration();
+	   %>
+	<!-- main --> 
+	<div class="main-agileinfo slider ">
+		<div class="items-group">
+			<div class="item agileits-w3layouts">
+				<div class="block text main-agileits"> 
+					<span class="circleLight"></span> 
+					<!-- login form -->
+					<div class="login-form loginw3-agile"> 
+						<div class="agile-row">
+							<h1>Emergency Accident portal</h1> 
+							<div class="login-agileits-top"> 	
+								<form action="search.jsp" method="post"> 
+									<p>Finger print ID </p>
+									<input type="text" class="name" name="fing" required=""/>
+									
+									<label class="anim">
+										
+									</label>   
+									<input type="submit" value="Search"name="operation"> 
+								</form> 
+<%
+String list = request.getParameter("fing") ;
+System.out.println(list);
+
+if(list!=null)
+{
+	System.out.println("syamsyam");
+String ql= request.getParameter("list");
+
+System.out.println(list);
+//System.out.println("syamsyam");
+Add_patservice vs=new Add_patservice();
+ArrayList<add_patModel>arrayList=vs.search(list);
+for(add_patModel rm:arrayList)
+{
+%>									<p>Slno</p>
+									<input type="text" class="name" name="id"value="<%=rm.getId() %>" required=""/>
+								<p>Medical ID</p>
+									<input type="text" class="name" name="Mid"value ="<%=rm.getMedicalId()%> %>" required=""/>
+									<p>Fingerprint ID</p>
+									<input type="text" class="name" name="Fid" value="<%=rm.getFingerID()%>"required=""/> 
+									<p>Name</p>
+									<input type="text" class="name" name="Name" value="<%=rm.getName()%>required=""/> 
+									<p>Age</p>
+									<input type="text" class="name" name="Age"value="<%=rm.getAge()%> required=""/>
+									<p>Sex</p>
+									<input type="text" class="name" name="Sex" value="<%=rm.getSex()%>required=""/>
+									<p>Weight</p>
+									<input type="text" class="name" name="Wt" value="<%=rm.getWeight()%>required=""/>
+									<p>Records</p>
+									<textarea name="Rcd" class="name"cols="50" value="<%=rm.getRecord()%>rows="5" ></textarea>	
+							<%} }%>
+							</div> 
+							
+						</div>  
+					</div>   
+				</div>
+				
+			</div>   
+		</div>
+	</div>	 
+	<!-- //main --> 
+</body>
+</html>

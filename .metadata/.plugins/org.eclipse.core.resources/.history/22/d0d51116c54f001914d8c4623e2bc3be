@@ -1,0 +1,75 @@
+package services;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import connection.Connect;
+import Model.add_patModel;
+
+public class Add_patservice {
+	Connection con=Connect.getConnection();
+	public int insert(add_patModel am) {
+		// TODO Auto-generated method stub
+		 try
+		    {
+		    	String s1="INSERT INTO records(MedicalID,FingerID,Name,Age,Sex,Weight,Record) VALUES (?,?,?,?,?,?,?)";
+		       
+		    	PreparedStatement ps=con.prepareStatement(s1);
+		        ps.setInt(1,am.getMedicalId());
+		        ps.setString(2,am.getFingerID());
+		        ps.setString(3,am.getName());
+		        ps.setInt(4,am.getAge());	      
+		        ps.setString(5,am.getSex());
+		        ps.setInt(6,am.getWeight());
+		        ps.setString(7, am.getRecord());
+		        ps.executeUpdate();
+		        ResultSet rs=ps.getGeneratedKeys();
+		        if(rs.next())
+		        {
+		        	return rs.getInt(1);
+		        	
+		        }
+		        
+		    }
+		    catch(Exception e)
+		    {
+		    	e.printStackTrace();
+		    	
+		    }
+		
+			
+		return 0;
+	}
+	public ArrayList<add_patModel> selectAllRegistration() {
+		add_patModel rm = null;
+		ArrayList<add_patModel> asv = new ArrayList<add_patModel>();
+		try {
+			PreparedStatement p = con
+					.prepareStatement("SELECT * FROM reminder");
+			ResultSet rs = p.executeQuery();
+			while (rs.next()) {
+				rm = new add_patModel();
+				rm.setId(rs.getInt(1));
+				rm.setMedicalId(rs.getInt(2));
+				rm.setFingerID(rs.getString(3));
+				rm.setName(rs.getString(4));
+				rm.setAge(rs.getInt(5));
+				rm.setSex(rs.getString(6));
+				rm.setWeight(rs.getInt(7));
+				rm.getRecord(rs.getString(8));
+
+				asv.add(rm);
+
+			}
+			return asv;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+		return null;
+	}
+}

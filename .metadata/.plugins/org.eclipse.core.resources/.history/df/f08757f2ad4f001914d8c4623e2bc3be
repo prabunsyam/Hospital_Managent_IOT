@@ -1,0 +1,12 @@
+package services;
+
+import Model.add_patModel;
+
+public class Add_patservice {
+
+	public int insert(add_patModel am) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

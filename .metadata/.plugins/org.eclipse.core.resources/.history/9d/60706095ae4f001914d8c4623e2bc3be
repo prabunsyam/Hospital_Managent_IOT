@@ -1,0 +1,60 @@
+package services;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import connection.Connect;
+import Model.add_patModel;
+
+public class Add_patservice {
+	Connection con=Connect.getConnection();
+	public int insert(add_patModel am) {
+		// TODO Auto-generated method stub
+		 try
+		    {
+		    	String s1="INSERT INTO `records`(`MedicalID`, `FIngerID`, `Name`, `Age`, `Sex`, `Weight`, `Records`) VALUES (?,?,?,?,?,?,?)";
+		       
+		    	PreparedStatement ps=con.prepareStatement(s1);
+		        ps.setInt(1,am.getMedicalId());
+		        ps.setString(2,am.getFingerID());
+		        ps.setString(3,am.getName());
+		        ps.setString(4,am.getDiscription());	      
+		        ps.setLong(5,am.getContact());
+		        ps.setString(6,am.getMailid());
+		        
+		       
+		       h= ps.executeUpdate();
+		        if(h!=0)
+		        {
+		        ResultSet rs=ps.getGeneratedKeys();
+		        while(rs.next())
+		        {
+		        	id=rs.getInt(1);
+		        	
+		        }
+		        
+		    	ps=con.prepareStatement(s2);
+		    	ps.setInt(1, id);
+		    	ps.setString(2, rm.getUser());
+		    	ps.setString(3, rm.getPass());
+		    	ps.setString(4,"company");
+		    	ps.setString(5, "ACTIVE");
+		    	ps.executeUpdate();
+		    	rs=ps.getGeneratedKeys();
+		          if(rs.next())
+		          {
+		        	  return rs.getInt(1);
+		        	  
+		          }
+		    }}
+		    catch(Exception e)
+		    {
+		    	e.printStackTrace();
+		    	
+		    }
+		
+			
+		return 0;
+	}
+
+}
