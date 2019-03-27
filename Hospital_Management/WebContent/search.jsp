@@ -36,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!-- login form -->
 					<div class="login-form loginw3-agile"> 
 						<div class="agile-row">
-							<h1>Emergency Accident portal</h1> 
+							<h1>Scan Your Fingerid</h1> 
 							<div class="login-agileits-top"> 	
 								<form action="search.jsp" method="post"> 
 									<p>Finger print ID </p>
@@ -54,7 +54,7 @@ System.out.println(list);
 if(list!=null)
 {
 	System.out.println("syamsyam");
-int ql=Integer.parseInt(request.getParameter("list"));
+String ql= request.getParameter("list");
 
 System.out.println(list);
 //System.out.println("syamsyam");
@@ -62,22 +62,25 @@ Add_patservice vs=new Add_patservice();
 ArrayList<add_patModel>arrayList=vs.search(list);
 for(add_patModel rm:arrayList)
 {
-%>									<p>Slno</p>
-									<input type="text" class="name" name="id"value="<%=rm.getId() %>" required=""/>
+%>	
+<label class="anim">
+										
+									</label> <h1>See details bellow</h1> 								<p>Slno</p>
+									<input type="text" class="name" name="id"value="<%=rm.getId()%>" />
 								<p>Medical ID</p>
-									<input type="text" class="name" name="Mid"value ="<%=rm.getMedicalId()%> %>" required=""/>
+									<input type="text" class="name" name="Mid"value ="<%=rm.getMedicalId()%>" />
 									<p>Fingerprint ID</p>
-									<input type="text" class="name" name="Fid" value="<%=rm.getFingerID()%>"required=""/> 
+									<input type="text" class="name" name="Fid" value="<%=rm.getFingerID()%>"/> 
 									<p>Name</p>
-									<input type="text" class="name" name="Name" value="<%=rm.getName()%>required=""/> 
+									<input type="text" class="name" name="Name" value="<%=rm.getName()%>"/> 
 									<p>Age</p>
-									<input type="text" class="name" name="Age"value="<%=rm.getAge()%> required=""/>
+									<input type="text" class="name" name="Age"value="<%=rm.getAge()%>"/>
 									<p>Sex</p>
-									<input type="text" class="name" name="Sex" value="<%=rm.getSex()%>required=""/>
+									<input type="text" class="name" name="Sex" value="<%=rm.getSex()%>"/>
 									<p>Weight</p>
-									<input type="text" class="name" name="Wt" value="<%=rm.getWeight()%>required=""/>
+									<input type="text" class="name" name="Wt" value="<%=rm.getWeight()%>"/>
 									<p>Records</p>
-									<textarea name="Rcd" class="name"cols="50" value="<%=rm.getRecord()%>rows="5" ></textarea>	
+									<textarea name="Rcd" class="name"cols="50" rows="5"><%=rm.getRecord()%></textarea>	
 							<%} }%>
 							</div> 
 							

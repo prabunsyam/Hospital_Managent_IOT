@@ -33,7 +33,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="login-form loginw3-agile"> 
 						<div class="agile-row">
 							<h1>Add Details</h1> 
-							<a href="search.jsp">add new reminder</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="search.jsp">EMERGENCY SEARCH</a>
 							<div class="login-agileits-top"> 	
 								<form action="Add_patservlet" method="post"> 
 								
